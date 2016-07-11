@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		520C07371D336CC900C910AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C07361D336CC900C910AC /* AppDelegate.swift */; };
-		520C07391D336CC900C910AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C07381D336CC900C910AC /* ViewController.swift */; };
-		520C073C1D336CC900C910AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520C073A1D336CC900C910AC /* Main.storyboard */; };
 		520C073E1D336CC900C910AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 520C073D1D336CC900C910AC /* Assets.xcassets */; };
-		520C07411D336CC900C910AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 520C073F1D336CC900C910AC /* LaunchScreen.storyboard */; };
 		520C074C1D336CC900C910AC /* MYWeiBoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C074B1D336CC900C910AC /* MYWeiBoTests.swift */; };
+		520C075D1D33780100C910AC /* DiscoverTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C075C1D33780100C910AC /* DiscoverTableViewController.swift */; };
+		520C075F1D33781A00C910AC /* HomeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C075E1D33781A00C910AC /* HomeTableViewController.swift */; };
+		520C07611D33782F00C910AC /* MeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C07601D33782F00C910AC /* MeTableViewController.swift */; };
+		520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C07621D33785400C910AC /* MessageTableViewController.swift */; };
+		520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520C07641D3378D700C910AC /* WBTabBarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,14 +30,16 @@
 /* Begin PBXFileReference section */
 		520C07331D336CC900C910AC /* MYWeiBo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MYWeiBo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		520C07361D336CC900C910AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		520C07381D336CC900C910AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		520C073B1D336CC900C910AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		520C073D1D336CC900C910AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		520C07401D336CC900C910AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		520C07421D336CC900C910AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		520C07471D336CC900C910AC /* MYWeiBoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MYWeiBoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		520C074B1D336CC900C910AC /* MYWeiBoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MYWeiBoTests.swift; sourceTree = "<group>"; };
 		520C074D1D336CC900C910AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		520C075C1D33780100C910AC /* DiscoverTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiscoverTableViewController.swift; sourceTree = "<group>"; };
+		520C075E1D33781A00C910AC /* HomeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTableViewController.swift; sourceTree = "<group>"; };
+		520C07601D33782F00C910AC /* MeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeTableViewController.swift; sourceTree = "<group>"; };
+		520C07621D33785400C910AC /* MessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageTableViewController.swift; sourceTree = "<group>"; };
+		520C07641D3378D700C910AC /* WBTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WBTabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,11 +81,9 @@
 		520C07351D336CC900C910AC /* MYWeiBo */ = {
 			isa = PBXGroup;
 			children = (
+				520C07561D33776C00C910AC /* classes */,
 				520C07361D336CC900C910AC /* AppDelegate.swift */,
-				520C07381D336CC900C910AC /* ViewController.swift */,
-				520C073A1D336CC900C910AC /* Main.storyboard */,
 				520C073D1D336CC900C910AC /* Assets.xcassets */,
-				520C073F1D336CC900C910AC /* LaunchScreen.storyboard */,
 				520C07421D336CC900C910AC /* Info.plist */,
 			);
 			path = MYWeiBo;
@@ -94,6 +96,58 @@
 				520C074D1D336CC900C910AC /* Info.plist */,
 			);
 			path = MYWeiBoTests;
+			sourceTree = "<group>";
+		};
+		520C07561D33776C00C910AC /* classes */ = {
+			isa = PBXGroup;
+			children = (
+				520C075B1D33779700C910AC /* Main */,
+				520C07571D33776C00C910AC /* Discover */,
+				520C07581D33776C00C910AC /* Home */,
+				520C07591D33776C00C910AC /* Me */,
+				520C075A1D33776C00C910AC /* Message */,
+			);
+			path = classes;
+			sourceTree = "<group>";
+		};
+		520C07571D33776C00C910AC /* Discover */ = {
+			isa = PBXGroup;
+			children = (
+				520C075C1D33780100C910AC /* DiscoverTableViewController.swift */,
+			);
+			path = Discover;
+			sourceTree = "<group>";
+		};
+		520C07581D33776C00C910AC /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				520C075E1D33781A00C910AC /* HomeTableViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		520C07591D33776C00C910AC /* Me */ = {
+			isa = PBXGroup;
+			children = (
+				520C07601D33782F00C910AC /* MeTableViewController.swift */,
+			);
+			path = Me;
+			sourceTree = "<group>";
+		};
+		520C075A1D33776C00C910AC /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				520C07621D33785400C910AC /* MessageTableViewController.swift */,
+			);
+			path = Message;
+			sourceTree = "<group>";
+		};
+		520C075B1D33779700C910AC /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				520C07641D3378D700C910AC /* WBTabBarViewController.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,9 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520C07411D336CC900C910AC /* LaunchScreen.storyboard in Resources */,
 				520C073E1D336CC900C910AC /* Assets.xcassets in Resources */,
-				520C073C1D336CC900C910AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +249,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				520C07391D336CC900C910AC /* ViewController.swift in Sources */,
+				520C075F1D33781A00C910AC /* HomeTableViewController.swift in Sources */,
+				520C07611D33782F00C910AC /* MeTableViewController.swift in Sources */,
+				520C075D1D33780100C910AC /* DiscoverTableViewController.swift in Sources */,
+				520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */,
+				520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */,
 				520C07371D336CC900C910AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -219,25 +275,6 @@
 			targetProxy = 520C07481D336CC900C910AC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		520C073A1D336CC900C910AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				520C073B1D336CC900C910AC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		520C073F1D336CC900C910AC /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				520C07401D336CC900C910AC /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		520C074E1D336CC900C910AC /* Debug */ = {
@@ -327,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MYWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Y.MYWeiBo;
@@ -338,6 +376,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = MYWeiBo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Y.MYWeiBo;
