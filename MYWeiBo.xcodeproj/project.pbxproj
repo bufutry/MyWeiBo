@@ -18,6 +18,8 @@
 		527697281D35DA0400EF0F7C /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 527697261D35DA0400EF0F7C /* MainVCSettings.json */; };
 		5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972A1D35E06D00EF0F7C /* NullTableViewController.swift */; };
 		5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */; };
+		5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972E1D3612D000EF0F7C /* VisitorView.swift */; };
+		527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697311D361B2100EF0F7C /* UIView+Layout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		527697261D35DA0400EF0F7C /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		5276972A1D35E06D00EF0F7C /* NullTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullTableViewController.swift; sourceTree = "<group>"; };
 		5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
+		5276972E1D3612D000EF0F7C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
+		527697311D361B2100EF0F7C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,7 @@
 		520C07561D33776C00C910AC /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				527697301D361AD700EF0F7C /* Category */,
 				520C075B1D33779700C910AC /* Main */,
 				520C07571D33776C00C910AC /* Discover */,
 				520C07581D33776C00C910AC /* Home */,
@@ -155,6 +160,7 @@
 				520C07641D3378D700C910AC /* WBTabBarViewController.swift */,
 				5276972A1D35E06D00EF0F7C /* NullTableViewController.swift */,
 				5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */,
+				5276972E1D3612D000EF0F7C /* VisitorView.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -165,6 +171,14 @@
 				527697261D35DA0400EF0F7C /* MainVCSettings.json */,
 			);
 			path = Ressource;
+			sourceTree = "<group>";
+		};
+		527697301D361AD700EF0F7C /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				527697311D361B2100EF0F7C /* UIView+Layout.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,8 +285,10 @@
 				5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */,
 				5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */,
 				520C07611D33782F00C910AC /* MeTableViewController.swift in Sources */,
+				527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */,
 				520C075D1D33780100C910AC /* DiscoverTableViewController.swift in Sources */,
 				520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */,
+				5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */,
 				520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */,
 				520C07371D336CC900C910AC /* AppDelegate.swift in Sources */,
 			);

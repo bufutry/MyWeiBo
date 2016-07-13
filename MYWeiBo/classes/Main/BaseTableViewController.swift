@@ -10,9 +10,12 @@ import UIKit
 
 class BaseTableViewController: UITableViewController {
 
+    var isLogin = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        isLogin ? super.viewDidLoad() : setupVisitorView()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -25,6 +28,9 @@ class BaseTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    private func setupVisitorView(){
+      view = VisitorView.init(frame: view.frame)
+    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
