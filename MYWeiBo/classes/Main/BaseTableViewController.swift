@@ -1,14 +1,14 @@
 //
-//  DiscoverTableViewController.swift
+//  BaseTableViewController.swift
 //  MYWeiBo
 //
-//  Created by 杨绍鑫 on 16/7/11.
+//  Created by 杨绍鑫 on 16/7/13.
 //  Copyright © 2016年 Y. All rights reserved.
 //
 
 import UIKit
 
-class DiscoverTableViewController: BaseTableViewController {
+class BaseTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
