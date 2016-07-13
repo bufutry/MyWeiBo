@@ -20,6 +20,7 @@
 		5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */; };
 		5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972E1D3612D000EF0F7C /* VisitorView.swift */; };
 		527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697311D361B2100EF0F7C /* UIView+Layout.swift */; };
+		527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +51,7 @@
 		5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		5276972E1D3612D000EF0F7C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		527697311D361B2100EF0F7C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
+		527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 		520C07561D33776C00C910AC /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				527697331D3633D200EF0F7C /* Tools */,
 				527697301D361AD700EF0F7C /* Category */,
 				520C075B1D33779700C910AC /* Main */,
 				520C07571D33776C00C910AC /* Discover */,
@@ -179,6 +182,14 @@
 				527697311D361B2100EF0F7C /* UIView+Layout.swift */,
 			);
 			path = Category;
+			sourceTree = "<group>";
+		};
+		527697331D3633D200EF0F7C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */,
+			);
+			path = Tools;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -290,6 +301,7 @@
 				520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */,
 				5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */,
 				520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */,
+				527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */,
 				520C07371D336CC900C910AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

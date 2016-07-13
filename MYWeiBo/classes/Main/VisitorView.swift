@@ -22,26 +22,20 @@ class VisitorView: UIView {
         addSubview(loginBtn)
         
 
-        backgroundImageView.x = (width - backgroundImageView.width)*0.5
-        backgroundImageView.y  = (height - backgroundImageView.height)*0.5
+        backgroundImageView.xmg_AlignInner(type: .Center, referView: self, size: nil)
+        homeImageView.xmg_AlignInner(type: .Center, referView: self, size: nil)
         
-        bgMaskView.center = backgroundImageView.center
+        contextLable.xmg_AlignVertical(type: XMG_AlignType.BottomCenter, referView: backgroundImageView, size: nil)
         
-        homeImageView.center = backgroundImageView.center
+        let width = NSLayoutConstraint.init(item: contextLable, attribute: .Width, relatedBy: .Equal, toItem: nil, attribute: .Width, multiplier: 1, constant: 244)
+        addConstraint(width)
         
-        contextLable.width = 244
-        contextLable.x = bgMaskView.x
-        contextLable.y = bgMaskView.MaxY+20
-        contextLable.height = 30;
+        registerBtn.xmg_AlignVertical(type: .BottomLeft, referView: contextLable, size: CGSizeMake(100, 30), offset: CGPointMake(0, 20))
         
+        loginBtn.xmg_AlignVertical(type: .BottomRight, referView: contextLable, size: CGSizeMake(100, 30), offset: CGPointMake(0, 20))
         
-        registerBtn.x = bgMaskView.x
-        registerBtn.width = 100
-        registerBtn.height = 30
-        registerBtn.y = contextLable.MaxY+15
-        
-        loginBtn.frame = registerBtn.frame
-        loginBtn.x = registerBtn.MaxX + 20
+        bgMaskView.xmg_Fill(self)
+
         
         
     }
