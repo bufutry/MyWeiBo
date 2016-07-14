@@ -11,6 +11,23 @@ import UIKit
 class VisitorView: UIView {
 
     
+    func setupInfo(isHome:Bool ,messgae:String ,imgeName:String) -> () {
+        backgroundImageView.hidden = !isHome
+        homeImageView.image = UIImage.init(named: imgeName)
+        contextLable.text = messgae
+        isHome ? setupAnimation():()
+    }
+    
+   private func setupAnimation() {
+        let animation = CABasicAnimation.init()
+        animation.keyPath = "transform.rotation"
+        animation.toValue = 2 * M_PI
+        animation.repeatCount  = MAXFLOAT;
+        animation.duration = 4
+        animation.removedOnCompletion = false
+        backgroundImageView.layer.addAnimation(animation, forKey: nil)
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -20,6 +37,7 @@ class VisitorView: UIView {
         addSubview(contextLable)
         addSubview(registerBtn)
         addSubview(loginBtn)
+        
         
 
         backgroundImageView.xmg_AlignInner(type: .Center, referView: self, size: nil)
@@ -36,7 +54,6 @@ class VisitorView: UIView {
         
         bgMaskView.xmg_Fill(self)
 
-        
         
     }
     

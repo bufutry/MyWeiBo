@@ -11,6 +11,7 @@ import UIKit
 class BaseTableViewController: UITableViewController {
 
     var isLogin = false
+    var visitorView:VisitorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +30,8 @@ class BaseTableViewController: UITableViewController {
     }
 
     private func setupVisitorView(){
-      view = VisitorView.init(frame: view.frame)
+        visitorView = VisitorView.init(frame: view.frame)
+        view = visitorView
     }
     // MARK: - Table view data source
 
