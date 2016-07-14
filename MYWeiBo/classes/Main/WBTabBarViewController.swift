@@ -14,8 +14,6 @@ class WBTabBarViewController: UITabBarController {
         
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
-        tabBar.tintColor = UIColor.orangeColor()
-        
         addaddChildViewControllers()
         // Do any additional setup after loading the view.
     }

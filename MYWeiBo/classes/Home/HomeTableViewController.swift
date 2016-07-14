@@ -11,15 +11,41 @@ import UIKit
 class HomeTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()        
-         visitorView?.setupInfo(true, messgae: "关注一些人，回这里看看有什么惊喜", imgeName: "visitordiscover_feed_image_house")
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        super.viewDidLoad()
+        if !isLogin {
+          visitorView?.setupInfo(true, messgae: "关注一些人，回这里看看有什么惊喜", imgeName: "visitordiscover_feed_image_house")
+        }
+        else
+        {
+           setupNav()
+        }
+       
     }
 
+    private func setupNav()
+    {
+        navigationItem.leftBarButtonItem = UIBarButtonItem.customItem(self, action: #selector(leftBarButtonClick), imageName: "navigationbar_friendattention")
+        navigationItem.rightBarButtonItem = UIBarButtonItem.customItem(self, action: #selector(rightBarButtonClick), imageName: "navigationbar_pop")
+        let titleBtn = TitleButton()
+        titleBtn.setTitle("我的 ", forState: .Normal)
+        titleBtn.addTarget(self, action: #selector(titleButtonClick), forControlEvents: .TouchUpInside)
+        navigationItem.titleView = titleBtn
+    }
+    
+    //MARK: - NavEvent
+    func leftBarButtonClick(){
+        print(#function)
+    }
+    
+    func rightBarButtonClick(){
+        print(#function)
+    }
+    
+    func titleButtonClick(btn:TitleButton){
+        print(#function)
+        btn.selected = !btn.selected
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

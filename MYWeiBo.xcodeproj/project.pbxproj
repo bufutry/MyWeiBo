@@ -21,6 +21,8 @@
 		5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972E1D3612D000EF0F7C /* VisitorView.swift */; };
 		527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697311D361B2100EF0F7C /* UIView+Layout.swift */; };
 		527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */; };
+		529975091D37384300CF856B /* UIBarButtonItem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529975081D37384300CF856B /* UIBarButtonItem+Button.swift */; };
+		5299756D1D3774CF00CF856B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299756C1D3774CF00CF856B /* TitleButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		5276972E1D3612D000EF0F7C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		527697311D361B2100EF0F7C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		529975081D37384300CF856B /* UIBarButtonItem+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Button.swift"; sourceTree = "<group>"; };
+		5299756C1D3774CF00CF856B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		520C07561D33776C00C910AC /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				529975071D37378B00CF856B /* Common */,
 				527697331D3633D200EF0F7C /* Tools */,
 				527697301D361AD700EF0F7C /* Category */,
 				520C075B1D33779700C910AC /* Main */,
@@ -180,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				527697311D361B2100EF0F7C /* UIView+Layout.swift */,
+				529975081D37384300CF856B /* UIBarButtonItem+Button.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -190,6 +196,14 @@
 				527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		529975071D37378B00CF856B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				5299756C1D3774CF00CF856B /* TitleButton.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +306,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				529975091D37384300CF856B /* UIBarButtonItem+Button.swift in Sources */,
 				520C075F1D33781A00C910AC /* HomeTableViewController.swift in Sources */,
 				5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */,
 				5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */,
@@ -302,6 +317,7 @@
 				5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */,
 				520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */,
 				527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */,
+				5299756D1D3774CF00CF856B /* TitleButton.swift in Sources */,
 				520C07371D336CC900C910AC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,8 +8,14 @@
 
 import UIKit
 
+protocol VisitorViewDelegat:NSObjectProtocol {
+    func visitorViewRegistClick()
+    func visitorViewLoginClick()
+}
+
 class VisitorView: UIView {
 
+    weak var delegat:VisitorViewDelegat?
     
     func setupInfo(isHome:Bool ,messgae:String ,imgeName:String) -> () {
         backgroundImageView.hidden = !isHome
@@ -61,6 +67,12 @@ class VisitorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func registClick() {
+        delegat?.visitorViewRegistClick()
+    }
+    func loginClick()  {
+        delegat?.visitorViewLoginClick()
+    }
     
     //MARK:cosotmUI
     private lazy var backgroundImageView:UIImageView = {
@@ -93,6 +105,7 @@ class VisitorView: UIView {
         registerBtn.setBackgroundImage(UIImage.init(named: "common_button_white_disable"), forState: .Normal)
         registerBtn.setTitle("注册", forState: .Normal)
         registerBtn.setTitleColor(UIColor.orangeColor(), forState: .Normal)
+        registerBtn.addTarget(self, action:#selector(registClick), forControlEvents: .TouchUpInside)
         return registerBtn
     }()
     
@@ -101,6 +114,7 @@ class VisitorView: UIView {
         loginBtn.setBackgroundImage(UIImage.init(named: "common_button_white_disable"), forState: .Normal)
         loginBtn.setTitle("登陆", forState: .Normal)
       loginBtn.setTitleColor(UIColor.darkGrayColor(), forState: .Normal)
+        loginBtn.addTarget(self, action:#selector(loginClick), forControlEvents: .TouchUpInside)
         return loginBtn
     }()
     

@@ -8,20 +8,17 @@
 
 import UIKit
 
-class BaseTableViewController: UITableViewController {
+class BaseTableViewController: UITableViewController,VisitorViewDelegat{
 
-    var isLogin = false
+    var isLogin = true
     var visitorView:VisitorView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem
 
         isLogin ? super.viewDidLoad() : setupVisitorView()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +28,27 @@ class BaseTableViewController: UITableViewController {
 
     private func setupVisitorView(){
         visitorView = VisitorView.init(frame: view.frame)
+        visitorView?.delegat = self
         view = visitorView
+        
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "注册", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(visitorViewLoginClick))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "登录", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(visitorViewLoginClick))
+    }
+    
+    //MARK: - VisitorDelegat
+    /**
+      点击注册
+     */
+    func visitorViewRegistClick() {
+        print(#function)
+    }
+    
+    /**
+     点击登录
+     */
+    func visitorViewLoginClick()
+    {
+        print(#function)
     }
     // MARK: - Table view data source
 
