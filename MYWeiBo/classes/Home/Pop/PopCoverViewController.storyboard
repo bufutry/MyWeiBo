@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Z5C-9q-XjM">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pop Cover View Controller-->
+        <scene sceneID="u7x-E2-J9h">
+            <objects>
+                <viewController id="Z5C-9q-XjM" customClass="PopCoverViewController" customModule="MYWeiBo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gWO-Ca-uua"/>
+                        <viewControllerLayoutGuide type="bottom" id="gw5-9s-izt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0ft-TF-U5V">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-MM-ZmK">
+                                <rect key="frame" x="40" y="40" width="520" height="540"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="top" secondItem="gWO-Ca-uua" secondAttribute="bottom" constant="20" id="Gki-6s-Ans"/>
+                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="leading" secondItem="0ft-TF-U5V" secondAttribute="leadingMargin" constant="20" id="SPa-h6-LzC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SN5-MM-ZmK" secondAttribute="trailing" constant="20" id="eLl-6V-eKH"/>
+                            <constraint firstItem="gw5-9s-izt" firstAttribute="top" secondItem="SN5-MM-ZmK" secondAttribute="bottom" constant="20" id="ehg-pp-RaS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2xV-Zc-lCF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="361" y="444"/>
+        </scene>
+    </scenes>
+</document>
