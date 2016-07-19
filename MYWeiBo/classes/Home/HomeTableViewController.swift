@@ -59,6 +59,9 @@ class HomeTableViewController: BaseTableViewController {
     
     func rightBarButtonClick(){
         print(#function)
+        let  sb = UIStoryboard.init(name: "QRCodeViewController", bundle: nil)
+        let vc = sb.instantiateInitialViewController()
+        presentViewController(vc!, animated: true, completion: nil)
     }
     
     func titleButtonClick(btn:TitleButton){
