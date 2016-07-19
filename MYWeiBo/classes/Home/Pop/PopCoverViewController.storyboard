@@ -18,16 +18,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-MM-ZmK">
-                                <rect key="frame" x="40" y="40" width="520" height="540"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="popover_background" translatesAutoresizingMaskIntoConstraints="NO" id="SN5-MM-ZmK">
+                                <rect key="frame" x="9" y="0.0" width="560" height="600"/>
                             </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="O55-8P-dhe">
+                                <rect key="frame" x="30" y="28" width="457" height="312"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="bpp-dx-S8k"/>
+                                    <constraint firstAttribute="height" id="jjS-lB-939"/>
+                                </constraints>
+                            </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="top" secondItem="gWO-Ca-uua" secondAttribute="bottom" constant="20" id="Gki-6s-Ans"/>
-                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="leading" secondItem="0ft-TF-U5V" secondAttribute="leadingMargin" constant="20" id="SPa-h6-LzC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="SN5-MM-ZmK" secondAttribute="trailing" constant="20" id="eLl-6V-eKH"/>
-                            <constraint firstItem="gw5-9s-izt" firstAttribute="top" secondItem="SN5-MM-ZmK" secondAttribute="bottom" constant="20" id="ehg-pp-RaS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SN5-MM-ZmK" secondAttribute="trailing" constant="20" id="9QK-Ue-laa"/>
+                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="leading" secondItem="0ft-TF-U5V" secondAttribute="leading" constant="20" id="Coz-3h-CVR"/>
+                            <constraint firstAttribute="trailing" secondItem="SN5-MM-ZmK" secondAttribute="trailing" constant="20" id="R7v-Om-bAI"/>
+                            <constraint firstAttribute="bottom" secondItem="SN5-MM-ZmK" secondAttribute="bottom" id="UqW-it-fb6"/>
+                            <constraint firstAttribute="trailing" secondItem="O55-8P-dhe" secondAttribute="trailing" constant="30" id="aCc-6y-6Pa"/>
+                            <constraint firstItem="gw5-9s-izt" firstAttribute="top" secondItem="O55-8P-dhe" secondAttribute="bottom" constant="20" id="d7j-Kz-pOc"/>
+                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="top" secondItem="gWO-Ca-uua" secondAttribute="bottom" id="gBf-6o-TWP"/>
+                            <constraint firstItem="O55-8P-dhe" firstAttribute="top" secondItem="gWO-Ca-uua" secondAttribute="bottom" constant="20" id="kac-i0-aNu"/>
+                            <constraint firstItem="O55-8P-dhe" firstAttribute="leading" secondItem="0ft-TF-U5V" secondAttribute="leading" constant="30" id="kjN-ce-slf"/>
+                            <constraint firstItem="SN5-MM-ZmK" firstAttribute="leading" secondItem="0ft-TF-U5V" secondAttribute="leadingMargin" constant="20" id="sd4-5j-NBj"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -36,4 +50,7 @@
             <point key="canvasLocation" x="361" y="444"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="popover_background" width="217" height="49"/>
+    </resources>
 </document>

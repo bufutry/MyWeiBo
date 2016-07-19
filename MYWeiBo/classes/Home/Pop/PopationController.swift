@@ -21,7 +21,7 @@ class PopationController: UIPresentationController {
     override func containerViewWillLayoutSubviews() {
         super.containerViewWillLayoutSubviews()
         if popFrame==CGRectZero {
-            presentedView()!.frame = CGRectMake(200, 50, 100, 300)
+            presentedView()!.frame = CGRectMake(100, 50, 200, 300)
         }
         else
         {
