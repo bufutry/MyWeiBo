@@ -70,6 +70,12 @@ class QRCodeViewController: UIViewController,UITabBarDelegate{
     }
   
     
+    @IBAction func myName(sender: UIButton) {
+        let vc = QRRecodeViewController()
+        navigationController?.pushViewController(vc, animated: true)
+        
+    }
+   
     @IBAction func closeClick(sender: UIBarButtonItem) {
         dismissViewControllerAnimated(true, completion: nil)
     }

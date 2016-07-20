@@ -76,12 +76,21 @@
                                     <constraint firstItem="gYk-If-NKs" firstAttribute="leading" secondItem="V3o-ai-cgj" secondAttribute="leading" id="p9e-Oa-qUy"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XqD-TX-nDR">
+                                <rect key="frame" x="270" y="441" width="60" height="30"/>
+                                <state key="normal" title="我的名片"/>
+                                <connections>
+                                    <action selector="myName:" destination="DFo-73-UqB" eventType="touchUpInside" id="jEf-eu-WqY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9Hf-OP-c4r" firstAttribute="leading" secondItem="gCt-ct-fO9" secondAttribute="leading" id="5ag-ab-eiu"/>
                             <constraint firstItem="V3o-ai-cgj" firstAttribute="centerY" secondItem="gCt-ct-fO9" secondAttribute="centerY" id="C3m-MU-nTH"/>
                             <constraint firstItem="9Hf-OP-c4r" firstAttribute="leading" secondItem="gCt-ct-fO9" secondAttribute="leadingMargin" id="SLW-vj-NMq"/>
+                            <constraint firstItem="9Hf-OP-c4r" firstAttribute="top" secondItem="XqD-TX-nDR" secondAttribute="bottom" constant="80" id="Zwo-aO-9cC"/>
+                            <constraint firstItem="XqD-TX-nDR" firstAttribute="centerX" secondItem="gCt-ct-fO9" secondAttribute="centerX" id="a0t-41-ljG"/>
                             <constraint firstItem="V3o-ai-cgj" firstAttribute="centerX" secondItem="gCt-ct-fO9" secondAttribute="centerX" id="aTG-or-nIg"/>
                             <constraint firstAttribute="trailing" secondItem="9Hf-OP-c4r" secondAttribute="trailing" id="dEr-50-TEU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="V3o-ai-cgj" secondAttribute="trailing" constant="20" id="dl0-wV-bAd"/>
