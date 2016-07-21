@@ -29,7 +29,7 @@ class VisitorView: UIView {
         animation.keyPath = "transform.rotation"
         animation.toValue = 2 * M_PI
         animation.repeatCount  = MAXFLOAT;
-        animation.duration = 4
+        animation.duration = 12
         animation.removedOnCompletion = false
         backgroundImageView.layer.addAnimation(animation, forKey: nil)
     }

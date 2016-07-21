@@ -19,12 +19,14 @@
 		5220B6C11D3DCB6200C6DE0B /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5220B6C01D3DCB6200C6DE0B /* QRCodeViewController.storyboard */; };
 		5220B6C31D3DCB8900C6DE0B /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220B6C21D3DCB8900C6DE0B /* QRCodeViewController.swift */; };
 		5237FEEC1D3F15F70010F424 /* QRRecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237FEEB1D3F15F70010F424 /* QRRecodeViewController.swift */; };
+		523CAAF21D405E8000954DE0 /* QauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CAAF11D405E8000954DE0 /* QauthViewController.swift */; };
 		527697281D35DA0400EF0F7C /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = 527697261D35DA0400EF0F7C /* MainVCSettings.json */; };
 		5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972A1D35E06D00EF0F7C /* NullTableViewController.swift */; };
 		5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */; };
 		5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5276972E1D3612D000EF0F7C /* VisitorView.swift */; };
 		527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697311D361B2100EF0F7C /* UIView+Layout.swift */; };
 		527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */; };
+		528EF0FE1D4073AE006ECB29 /* NetWokingToos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EF0FD1D4073AE006ECB29 /* NetWokingToos.swift */; };
 		529975091D37384300CF856B /* UIBarButtonItem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529975081D37384300CF856B /* UIBarButtonItem+Button.swift */; };
 		5299756D1D3774CF00CF856B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299756C1D3774CF00CF856B /* TitleButton.swift */; };
 		6FE7EBAB1D3B784800CD1557 /* PopCoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAA1D3B784800CD1557 /* PopCoverViewController.storyboard */; };
@@ -60,12 +62,14 @@
 		5220B6C01D3DCB6200C6DE0B /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		5220B6C21D3DCB8900C6DE0B /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		5237FEEB1D3F15F70010F424 /* QRRecodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRRecodeViewController.swift; sourceTree = "<group>"; };
+		523CAAF11D405E8000954DE0 /* QauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QauthViewController.swift; sourceTree = "<group>"; };
 		527697261D35DA0400EF0F7C /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		5276972A1D35E06D00EF0F7C /* NullTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NullTableViewController.swift; sourceTree = "<group>"; };
 		5276972C1D35EA1E00EF0F7C /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		5276972E1D3612D000EF0F7C /* VisitorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorView.swift; sourceTree = "<group>"; };
 		527697311D361B2100EF0F7C /* UIView+Layout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Layout.swift"; sourceTree = "<group>"; };
 		527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		528EF0FD1D4073AE006ECB29 /* NetWokingToos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWokingToos.swift; sourceTree = "<group>"; };
 		529975081D37384300CF856B /* UIBarButtonItem+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Button.swift"; sourceTree = "<group>"; };
 		5299756C1D3774CF00CF856B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
 		6FE7EBAA1D3B784800CD1557 /* PopCoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopCoverViewController.storyboard; sourceTree = "<group>"; };
@@ -138,6 +142,7 @@
 		520C07561D33776C00C910AC /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				523CAAF01D405DF500954DE0 /* Oauth */,
 				529975071D37378B00CF856B /* Common */,
 				527697331D3633D200EF0F7C /* Tools */,
 				527697301D361AD700EF0F7C /* Category */,
@@ -207,6 +212,14 @@
 			path = ORCode;
 			sourceTree = "<group>";
 		};
+		523CAAF01D405DF500954DE0 /* Oauth */ = {
+			isa = PBXGroup;
+			children = (
+				523CAAF11D405E8000954DE0 /* QauthViewController.swift */,
+			);
+			path = Oauth;
+			sourceTree = "<group>";
+		};
 		527697251D35D9CF00EF0F7C /* Ressource */ = {
 			isa = PBXGroup;
 			children = (
@@ -228,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				527697341D3633E500EF0F7C /* UIView+AutoLayout.swift */,
+				528EF0FD1D4073AE006ECB29 /* NetWokingToos.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -434,6 +448,8 @@
 				520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */,
 				5276972F1D3612D000EF0F7C /* VisitorView.swift in Sources */,
 				6FE7EBAD1D3B79B000CD1557 /* PopationController.swift in Sources */,
+				528EF0FE1D4073AE006ECB29 /* NetWokingToos.swift in Sources */,
+				523CAAF21D405E8000954DE0 /* QauthViewController.swift in Sources */,
 				520C07651D3378D700C910AC /* WBTabBarViewController.swift in Sources */,
 				527697351D3633E500EF0F7C /* UIView+AutoLayout.swift in Sources */,
 				6FE7EBAF1D3B79D600CD1557 /* PopCoverViewController.swift in Sources */,

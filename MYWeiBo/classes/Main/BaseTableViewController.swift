@@ -10,7 +10,7 @@ import UIKit
 
 class BaseTableViewController: UITableViewController,VisitorViewDelegat{
 
-    var isLogin = true
+    var isLogin = false
     var visitorView:VisitorView?
     
     override func viewDidLoad() {
@@ -49,6 +49,9 @@ class BaseTableViewController: UITableViewController,VisitorViewDelegat{
     func visitorViewLoginClick()
     {
         print(#function)
+        let nav = UINavigationController.init(rootViewController:QauthViewController())
+        navigationController?.presentViewController(nav, animated: true, completion: nil)
+        
     }
     // MARK: - Table view data source
 
