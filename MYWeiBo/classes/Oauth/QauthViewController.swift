@@ -69,5 +69,21 @@ class QauthViewController: UIViewController,UIWebViewDelegate {
     
     private func getAcessToken(code:String){
        
+        let apiNmae = "/oauth2/access_token"
+        let parme = ["lient_id":appKey,
+                     "client_secret":appSecret,
+                     "grant_type":"authorization_code",
+                     "code":code,
+                     "redirect_uri":appRedirectUrl]
+        
+        NetWokingToos .sharedManger().startPOST(apiNmae, pamre: parme, success: { (NetDate) in
+           
+            let acout = AcountInfo.init(dice: NetDate as! Dictionary<String,AnyObject>)
+            acout.saveAcount()
+            
+            }) { (_, error) in
+                
+        }
+        
     }
 }

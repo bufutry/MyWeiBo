@@ -29,6 +29,9 @@
 		528EF0FE1D4073AE006ECB29 /* NetWokingToos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528EF0FD1D4073AE006ECB29 /* NetWokingToos.swift */; };
 		529975091D37384300CF856B /* UIBarButtonItem+Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 529975081D37384300CF856B /* UIBarButtonItem+Button.swift */; };
 		5299756D1D3774CF00CF856B /* TitleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5299756C1D3774CF00CF856B /* TitleButton.swift */; };
+		52ECCCAA1D41FE0400E95683 /* AcountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECCCA91D41FE0400E95683 /* AcountInfo.swift */; };
+		52ECCCAC1D42047D00E95683 /* NSString+FilePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECCCAB1D42047D00E95683 /* NSString+FilePath.swift */; };
+		52ECCCAF1D4212BE00E95683 /* NewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52ECCCAE1D4212BE00E95683 /* NewFeatureViewController.swift */; };
 		6FE7EBAB1D3B784800CD1557 /* PopCoverViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAA1D3B784800CD1557 /* PopCoverViewController.storyboard */; };
 		6FE7EBAD1D3B79B000CD1557 /* PopationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAC1D3B79B000CD1557 /* PopationController.swift */; };
 		6FE7EBAF1D3B79D600CD1557 /* PopCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAE1D3B79D600CD1557 /* PopCoverViewController.swift */; };
@@ -72,6 +75,9 @@
 		528EF0FD1D4073AE006ECB29 /* NetWokingToos.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWokingToos.swift; sourceTree = "<group>"; };
 		529975081D37384300CF856B /* UIBarButtonItem+Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIBarButtonItem+Button.swift"; sourceTree = "<group>"; };
 		5299756C1D3774CF00CF856B /* TitleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleButton.swift; sourceTree = "<group>"; };
+		52ECCCA91D41FE0400E95683 /* AcountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AcountInfo.swift; sourceTree = "<group>"; };
+		52ECCCAB1D42047D00E95683 /* NSString+FilePath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+FilePath.swift"; sourceTree = "<group>"; };
+		52ECCCAE1D4212BE00E95683 /* NewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewFeatureViewController.swift; sourceTree = "<group>"; };
 		6FE7EBAA1D3B784800CD1557 /* PopCoverViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = PopCoverViewController.storyboard; sourceTree = "<group>"; };
 		6FE7EBAC1D3B79B000CD1557 /* PopationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopationController.swift; sourceTree = "<group>"; };
 		6FE7EBAE1D3B79D600CD1557 /* PopCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopCoverViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 		520C07561D33776C00C910AC /* classes */ = {
 			isa = PBXGroup;
 			children = (
+				52ECCCAD1D42123300E95683 /* NewFeature */,
 				523CAAF01D405DF500954DE0 /* Oauth */,
 				529975071D37378B00CF856B /* Common */,
 				527697331D3633D200EF0F7C /* Tools */,
@@ -216,6 +223,7 @@
 			isa = PBXGroup;
 			children = (
 				523CAAF11D405E8000954DE0 /* QauthViewController.swift */,
+				52ECCCA91D41FE0400E95683 /* AcountInfo.swift */,
 			);
 			path = Oauth;
 			sourceTree = "<group>";
@@ -233,6 +241,7 @@
 			children = (
 				527697311D361B2100EF0F7C /* UIView+Layout.swift */,
 				529975081D37384300CF856B /* UIBarButtonItem+Button.swift */,
+				52ECCCAB1D42047D00E95683 /* NSString+FilePath.swift */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -252,6 +261,14 @@
 				5299756C1D3774CF00CF856B /* TitleButton.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		52ECCCAD1D42123300E95683 /* NewFeature */ = {
+			isa = PBXGroup;
+			children = (
+				52ECCCAE1D4212BE00E95683 /* NewFeatureViewController.swift */,
+			);
+			path = NewFeature;
 			sourceTree = "<group>";
 		};
 		6FE7EBA91D3B782200CD1557 /* Pop */ = {
@@ -435,8 +452,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52ECCCAC1D42047D00E95683 /* NSString+FilePath.swift in Sources */,
+				52ECCCAA1D41FE0400E95683 /* AcountInfo.swift in Sources */,
 				6FE7EBB11D3B7E8B00CD1557 /* PopcoverAnimation.swift in Sources */,
 				529975091D37384300CF856B /* UIBarButtonItem+Button.swift in Sources */,
+				52ECCCAF1D4212BE00E95683 /* NewFeatureViewController.swift in Sources */,
 				520C075F1D33781A00C910AC /* HomeTableViewController.swift in Sources */,
 				5237FEEC1D3F15F70010F424 /* QRRecodeViewController.swift in Sources */,
 				5220B6C31D3DCB8900C6DE0B /* QRCodeViewController.swift in Sources */,
