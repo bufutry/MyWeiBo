@@ -13,9 +13,9 @@ import AFNetworking
 class NetWokingToos: NSObject {
   
     private lazy var netManger:AFHTTPSessionManager = {
-        let baseUrl = NSURL.init(string: "https://api.weibo.com")
+        let baseUrl = NSURL.init(string: "https://api.weibo.com/")
         let manger = AFHTTPSessionManager.init(baseURL: baseUrl)
-//        manger.responseSerializer.acceptableContentTypes = NSSet.init(objects: "application/json", "text/json", "text/javascript","text/plain") as? Set<String>
+        manger.responseSerializer.acceptableContentTypes = NSSet.init(objects: "application/json", "text/json", "text/javascript","text/plain") as? Set<String>
         return manger
     }()
     

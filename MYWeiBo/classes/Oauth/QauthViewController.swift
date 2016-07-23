@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AFNetworking
 
 class QauthViewController: UIViewController,UIWebViewDelegate {
     
@@ -69,8 +70,12 @@ class QauthViewController: UIViewController,UIWebViewDelegate {
     
     private func getAcessToken(code:String){
        
-        let apiNmae = "/oauth2/access_token"
-        let parme = ["lient_id":appKey,
+        print(code)
+        let apiNmae = "oauth2/access_token"
+        
+        
+        
+        let parme = ["client_id":appKey,
                      "client_secret":appSecret,
                      "grant_type":"authorization_code",
                      "code":code,
@@ -78,12 +83,27 @@ class QauthViewController: UIViewController,UIWebViewDelegate {
         
         NetWokingToos .sharedManger().startPOST(apiNmae, pamre: parme, success: { (NetDate) in
            
+            print(NetDate)
             let acout = AcountInfo.init(dice: NetDate as! Dictionary<String,AnyObject>)
-            acout.saveAcount()
-            
+             currentAcount = acout
+             self.getUserInfo()
             }) { (_, error) in
-                
         }
-        
     }
+    
+    private func getUserInfo(){
+
+        let apiName = "2/users/show.json"
+        let parme = ["access_token":currentAcount!.access_token!,"uid":currentAcount!.uid!]
+        
+        NetWokingToos.sharedManger().startGET(apiName, pamre: parme, success: { (data) in
+            currentAcount!.screen_name = data!["screen_name"] as? String
+            currentAcount?.profile_image_url = data!["profile_image_url"] as? String
+           currentAcount?.saveAcount()
+            NSNotificationCenter.defaultCenter().postNotificationName(NeedReturnMainVC, object: nil)
+        }) { (_, e) in
+            
+        }
+    }
+
 }

@@ -36,6 +36,7 @@
 		6FE7EBAD1D3B79B000CD1557 /* PopationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAC1D3B79B000CD1557 /* PopationController.swift */; };
 		6FE7EBAF1D3B79D600CD1557 /* PopCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7EBAE1D3B79D600CD1557 /* PopCoverViewController.swift */; };
 		6FE7EBB11D3B7E8B00CD1557 /* PopcoverAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE7EBB01D3B7E8B00CD1557 /* PopcoverAnimation.swift */; };
+		6FFAF0D11D4358AF002F20AA /* WelcomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFAF0D01D4358AF002F20AA /* WelcomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		6FE7EBAC1D3B79B000CD1557 /* PopationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopationController.swift; sourceTree = "<group>"; };
 		6FE7EBAE1D3B79D600CD1557 /* PopCoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopCoverViewController.swift; sourceTree = "<group>"; };
 		6FE7EBB01D3B7E8B00CD1557 /* PopcoverAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopcoverAnimation.swift; sourceTree = "<group>"; };
+		6FFAF0D01D4358AF002F20AA /* WelcomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomViewController.swift; sourceTree = "<group>"; };
 		95A40C378F0852AB15B52767 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ED39CAE885708568DDCE9641 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -267,6 +269,7 @@
 			isa = PBXGroup;
 			children = (
 				52ECCCAE1D4212BE00E95683 /* NewFeatureViewController.swift */,
+				6FFAF0D01D4358AF002F20AA /* WelcomViewController.swift */,
 			);
 			path = NewFeature;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 				TargetAttributes = {
 					520C07321D336CC900C910AC = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = J375KVZ44N;
 					};
 					520C07461D336CC900C910AC = {
 						CreatedOnToolsVersion = 7.3.1;
@@ -463,6 +467,7 @@
 				5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */,
 				5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */,
 				520C07611D33782F00C910AC /* MeTableViewController.swift in Sources */,
+				6FFAF0D11D4358AF002F20AA /* WelcomViewController.swift in Sources */,
 				527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */,
 				520C075D1D33780100C910AC /* DiscoverTableViewController.swift in Sources */,
 				520C07631D33785400C910AC /* MessageTableViewController.swift in Sources */,
