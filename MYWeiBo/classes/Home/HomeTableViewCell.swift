@@ -32,6 +32,7 @@ class HomeTableViewCell: UITableViewCell {
         /// 头像
     private lazy var avtarView:UIImageView = {
       let image = UIImageView()
+        image.image = UIImage.init(named: "avatar_default")
       return image
     }()
 }
