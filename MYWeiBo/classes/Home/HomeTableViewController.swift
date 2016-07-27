@@ -33,8 +33,8 @@ class HomeTableViewController: BaseTableViewController {
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(changePresent), name: PresentationControlleWillHidden, object: nil)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(changePresent), name: PresentationControlleWillShow, object: nil)
           //  modalTransitionStyle =
-            tableView.rowHeight = 150
-            
+            tableView.rowHeight = UITableViewAutomaticDimension
+            tableView.separatorStyle = .None
             tableView.registerClass(HomeTableViewCell.self, forCellReuseIdentifier: HomereuseIdentifier)
             loadData()
         }
@@ -117,11 +117,27 @@ extension HomeTableViewController
         let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier, forIndexPath: indexPath) as! HomeTableViewCell
         
         let mode = list![indexPath.row]
-        cell.textLabel?.text = mode.text
+        cell.statuses = mode
         return cell
         
     }
 
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let mode = list![indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier, forIndexPath: indexPath) as! HomeTableViewCell
+        
+        var height:CGFloat = 300
+        
+        if mode.cellHeight==0 {
+            height = cell.cellHight(mode)
+        }
+        else
+        {
+           height = mode.cellHeight
+        }
+       
+        return height
+    }
    
 }
 
