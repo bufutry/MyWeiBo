@@ -18,6 +18,8 @@
 		5220B6BE1D3DB9DB00C6DE0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5220B6BD1D3DB9DB00C6DE0B /* Assets.xcassets */; };
 		5220B6C11D3DCB6200C6DE0B /* QRCodeViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5220B6C01D3DCB6200C6DE0B /* QRCodeViewController.storyboard */; };
 		5220B6C31D3DCB8900C6DE0B /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5220B6C21D3DCB8900C6DE0B /* QRCodeViewController.swift */; };
+		5224303A1D49D3FE002EAD70 /* NormalStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 522430391D49D3FE002EAD70 /* NormalStatusCell.swift */; };
+		5224303C1D49D442002EAD70 /* RetweetedViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5224303B1D49D442002EAD70 /* RetweetedViewCell.swift */; };
 		5236FCDD1D4853CA009251AD /* StatusePictureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5236FCDC1D4853CA009251AD /* StatusePictureView.swift */; };
 		5237FEEC1D3F15F70010F424 /* QRRecodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5237FEEB1D3F15F70010F424 /* QRRecodeViewController.swift */; };
 		523CAAF21D405E8000954DE0 /* QauthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 523CAAF11D405E8000954DE0 /* QauthViewController.swift */; };
@@ -74,6 +76,8 @@
 		5220B6BD1D3DB9DB00C6DE0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = MYWeiBo/classes/Message/Assets.xcassets; sourceTree = "<group>"; };
 		5220B6C01D3DCB6200C6DE0B /* QRCodeViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QRCodeViewController.storyboard; sourceTree = "<group>"; };
 		5220B6C21D3DCB8900C6DE0B /* QRCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
+		522430391D49D3FE002EAD70 /* NormalStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormalStatusCell.swift; sourceTree = "<group>"; };
+		5224303B1D49D442002EAD70 /* RetweetedViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetedViewCell.swift; sourceTree = "<group>"; };
 		5236FCDC1D4853CA009251AD /* StatusePictureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatusePictureView.swift; sourceTree = "<group>"; };
 		5237FEEB1D3F15F70010F424 /* QRRecodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRRecodeViewController.swift; sourceTree = "<group>"; };
 		523CAAF11D405E8000954DE0 /* QauthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QauthViewController.swift; sourceTree = "<group>"; };
@@ -202,6 +206,8 @@
 				52842E3B1D46F01A00BFE38D /* StatuseFooterView.swift */,
 				5236FCDC1D4853CA009251AD /* StatusePictureView.swift */,
 				5262CA651D48B0B400D92A17 /* User.swift */,
+				522430391D49D3FE002EAD70 /* NormalStatusCell.swift */,
+				5224303B1D49D442002EAD70 /* RetweetedViewCell.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -497,9 +503,11 @@
 				5276972B1D35E06D00EF0F7C /* NullTableViewController.swift in Sources */,
 				5276972D1D35EA1E00EF0F7C /* BaseTableViewController.swift in Sources */,
 				52842E3E1D46F1A000BFE38D /* UILable+Category.swift in Sources */,
+				5224303C1D49D442002EAD70 /* RetweetedViewCell.swift in Sources */,
 				52842E3C1D46F01A00BFE38D /* StatuseFooterView.swift in Sources */,
 				520C07611D33782F00C910AC /* MeTableViewController.swift in Sources */,
 				6FFAF0D11D4358AF002F20AA /* WelcomViewController.swift in Sources */,
+				5224303A1D49D3FE002EAD70 /* NormalStatusCell.swift in Sources */,
 				527697321D361B2100EF0F7C /* UIView+Layout.swift in Sources */,
 				5236FCDD1D4853CA009251AD /* StatusePictureView.swift in Sources */,
 				520C075D1D33780100C910AC /* DiscoverTableViewController.swift in Sources */,

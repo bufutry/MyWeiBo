@@ -14,9 +14,10 @@ let  PictureReuseIdentifier = "PictureReuseIdentifier"
 
 class StatusePictureView: UICollectionView {
     
-    var statuse:Statuses? {
+    var imageArray:[NSURL]? {
         didSet{
           calculationSize()
+            print(imageArray)
           reloadData()
         }
     }
@@ -39,27 +40,27 @@ class StatusePictureView: UICollectionView {
     func calculationSize() -> CGSize {
         
         
+        
         let with:CGFloat = 90
         let margin:CGFloat = 10
-        if statuse?.storePic?.count==0 || statuse?.storePic==nil {
+        layout.itemSize = CGSizeMake(width, width)
+        if imageArray?.count==0 || imageArray==nil {
             return CGSizeZero
         }
         
-        if(statuse?.storePic?.count == 1){
-            let url = statuse?.storePic?.first
+        if(imageArray!.count == 1){
+            let url = imageArray!.first
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(url?.absoluteString)
-            print(statuse?.user?.name)
-            print(image.size)
             layout.itemSize = image.size
             return image.size
         }
 
-        if statuse?.storePic?.count==4 {
+        if imageArray?.count==4 {
             return CGSizeMake(with*2+margin, with*2+margin)
         }
         else
         {
-            let mod = CGFloat(statuse!.storePic!.count/3)
+            let mod = CGFloat(imageArray!.count/3)
             return  CGSizeMake(with*3+margin*2,with+(with+margin)*mod)
         }
     }
@@ -73,7 +74,7 @@ class StatusePictureView: UICollectionView {
 extension StatusePictureView:UICollectionViewDataSource
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return statuse?.storePic?.count ?? 0
+        return imageArray?.count ?? 0
     }
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -82,7 +83,7 @@ extension StatusePictureView:UICollectionViewDataSource
   
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(PictureReuseIdentifier, forIndexPath: indexPath) as! StatusePictureCell
-        let url = statuse?.storePic![indexPath.row]
+        let url = imageArray![indexPath.row]
         cell.bgImageView.sd_setImageWithURL(url)
         return cell
     }

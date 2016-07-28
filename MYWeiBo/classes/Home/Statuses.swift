@@ -62,6 +62,15 @@ class Statuses: NSObject{
     }
     var storePic:[NSURL]?
     
+        /// 转发
+    var retweeted_status:Statuses?
+    var picList:[NSURL]?{
+    
+        get{
+            return retweeted_status == nil ? storePic : retweeted_status?.storePic
+        }
+    }
+    
     
     
     var cellHeight:CGFloat = 0.0
@@ -88,10 +97,14 @@ class Statuses: NSObject{
     override func setValue(value: AnyObject?, forKey key: String) {
         if "user" == key {
             user = User.init(dict: value as! [String:AnyObject])
+            return
         }
-        else{
+        if "retweeted_status" == key {
+            retweeted_status = Statuses.init(dice: value as! [String:AnyObject])
+            return
+        }
+       
           super.setValue(value, forKey: key)
-        }
     }
     
     class  func loadSatuses(data:(netdata:[Statuses]?,error:NSError?)->())  {
@@ -102,7 +115,6 @@ class Statuses: NSObject{
             let lists = json!["statuses"] as! [[String:AnyObject]]
             let satuseArray = transfromMode(lists)
             downImage(satuseArray, data: data)
-           // data(netdata:satuseArray,error: nil)
             }) { (_, error) in
                 data(netdata: nil,error: error)
         }
@@ -112,14 +124,15 @@ class Statuses: NSObject{
        
          let  group = dispatch_group_create()
         for status in list! {
-            guard (status.storePic != nil) else{
+            guard (status.picList != nil) else{
               continue
             }
             
-            for url in status.storePic! {
+            
+            for url in status.picList! {
                 dispatch_group_enter(group)
-               
                 SDWebImageManager.sharedManager().downloadWithURL(url, options: .RetryFailed, progress:nil, completed: { (_, _, _, _) in
+                    print("ok")
                     dispatch_group_leave(group)
                 })
             }

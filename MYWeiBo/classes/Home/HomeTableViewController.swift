@@ -8,7 +8,6 @@
 
 import UIKit
 
-let HomereuseIdentifier = "HomereuseIdentifier"
 
 
 class HomeTableViewController: BaseTableViewController {
@@ -35,7 +34,8 @@ class HomeTableViewController: BaseTableViewController {
           //  modalTransitionStyle =
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.separatorStyle = .None
-            tableView.registerClass(HomeTableViewCell.self, forCellReuseIdentifier: HomereuseIdentifier)
+            tableView.registerClass(NormalStatusCell.self, forCellReuseIdentifier: HomeTableViewCellIdentifier.normalr.rawValue)
+             tableView.registerClass(RetweetedViewCell.self, forCellReuseIdentifier:  HomeTableViewCellIdentifier.retweeted.rawValue)
             loadData()
         }
         
@@ -114,9 +114,8 @@ extension HomeTableViewController
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier, forIndexPath: indexPath) as! HomeTableViewCell
-        
         let mode = list![indexPath.row]
+        let cell = tableView.dequeueReusableCellWithIdentifier( HomeTableViewCellIdentifier.cellIdentifier(mode), forIndexPath: indexPath) as! HomeTableViewCell
         cell.statuses = mode
         return cell
         
@@ -124,7 +123,7 @@ extension HomeTableViewController
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let mode = list![indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(HomeTableViewCellIdentifier.cellIdentifier(mode)) as! HomeTableViewCell
         var height:CGFloat = 300
         
         if mode.cellHeight==0 {
