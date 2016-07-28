@@ -37,8 +37,7 @@ class NetWokingToos: NSObject {
         
          if let date = JSON
          {
-            success!(JSON)
-         //  print(date)
+            success!(date)
          }
         
         }) { (_, error) in

@@ -118,7 +118,8 @@ class Statuses: NSObject{
             
             for url in status.storePic! {
                 dispatch_group_enter(group)
-                SDWebImageManager.sharedManager().downloadWithURL(url, options: .RetryFailed, progress: nil, completed: { (_, _, _, _) in
+               
+                SDWebImageManager.sharedManager().downloadWithURL(url, options: .RetryFailed, progress:nil, completed: { (_, _, _, _) in
                     dispatch_group_leave(group)
                 })
             }

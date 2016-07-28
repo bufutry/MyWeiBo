@@ -38,35 +38,30 @@ class StatusePictureView: UICollectionView {
     
     func calculationSize() -> CGSize {
         
-        var  size:CGSize = CGSizeZero
         
         let with:CGFloat = 90
         let margin:CGFloat = 10
-        layout.itemSize = CGSizeMake(with, with)
-        
         if statuse?.storePic?.count==0 || statuse?.storePic==nil {
-            size = CGSizeZero
-            layout.itemSize = size
+            return CGSizeZero
         }
         
-        
-        if statuse?.storePic?.count==4 {
-            size = CGSizeMake(with*2+margin, with*2+margin)
-        }
-        else if(statuse?.storePic?.count == 1){
+        if(statuse?.storePic?.count == 1){
             let url = statuse?.storePic?.first
             let image = SDWebImageManager.sharedManager().imageCache.imageFromDiskCacheForKey(url?.absoluteString)
-            size = image.size
-            layout.itemSize = size
+            print(statuse?.user?.name)
+            print(image.size)
+            layout.itemSize = image.size
+            return image.size
+        }
+
+        if statuse?.storePic?.count==4 {
+            return CGSizeMake(with*2+margin, with*2+margin)
         }
         else
         {
             let mod = CGFloat(statuse!.storePic!.count/3)
-            size = CGSizeMake(with*3+margin*2,with+(with+margin)*mod)
+            return  CGSizeMake(with*3+margin*2,with+(with+margin)*mod)
         }
-        
-        return size
-        
     }
     
     required init?(coder aDecoder: NSCoder) {

@@ -10,14 +10,19 @@ import UIKit
 
 class HomeTableViewCell: UITableViewCell {
 
+    var pictureHeiCons:NSLayoutConstraint?
+    var pictureWitdCons:NSLayoutConstraint?
+    
+    
     var statuses:Statuses?{
         didSet{
             topView.statuse = statuses
             contextView.text = statuses?.text
             pictureView.statuse = statuses
-            pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contextView, size: pictureView.calculationSize() ,offset: CGPointMake(0, 10))
-            statuses?.cellHeight = CGRectGetMaxY(footView.frame)
-        }
+            let size = pictureView.calculationSize()
+            pictureWitdCons?.constant = size.width
+            pictureHeiCons?.constant = size.height
+       }
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -33,21 +38,18 @@ class HomeTableViewCell: UITableViewCell {
         
         topView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: contentView, size: CGSizeMake(with, 60), offset: CGPointMake(0, 0))
         contextView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPointMake(10, 10))
-        pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomCenter, referView: contextView, size: nil,offset: CGPointMake(0, 10))
+        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contextView, size: CGSizeZero,offset: CGPointMake(0, 10))
+        pictureHeiCons = pictureView.xmg_Constraint(cons, attribute: .Height)
+        pictureWitdCons = pictureView.xmg_Constraint(cons, attribute: .Width)
         footView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSizeMake(with, 30), offset: CGPointMake(-10, 10))
-        
-
     }
     
     func cellHight(statuses:Statuses) -> CGFloat {
-//         topView.statuse = statuses
-//        contextView.text = statuses.text
-//        pictureView.statuse = statuses
-//        pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contextView, size: pictureView.calculationSize() ,offset: CGPointMake(0, 10))
-//        statuses.cellHeight = CGRectGetMaxY(footView.frame)
-//        contentView.layoutIfNeeded()
-//        return CGRectGetMaxY(footView.frame)
-        return 300
+        
+        self.statuses = statuses
+        contentView.layoutIfNeeded()
+        self.statuses?.cellHeight = CGRectGetMaxY(footView.frame)
+        return CGRectGetMaxY(footView.frame)
     }
         /// 用户信息
     private lazy var topView:StatuseTopView = StatuseTopView()
@@ -57,7 +59,6 @@ class HomeTableViewCell: UITableViewCell {
         labe.numberOfLines = 0;
         labe.preferredMaxLayoutWidth = UIScreen.mainScreen().bounds.width - 20
         return labe
-        
     }()
     
     

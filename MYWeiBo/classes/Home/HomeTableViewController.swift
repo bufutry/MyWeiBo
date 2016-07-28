@@ -124,8 +124,7 @@ extension HomeTableViewController
 
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let mode = list![indexPath.row]
-        let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier, forIndexPath: indexPath) as! HomeTableViewCell
-        
+        let cell = tableView.dequeueReusableCellWithIdentifier(HomereuseIdentifier) as! HomeTableViewCell
         var height:CGFloat = 300
         
         if mode.cellHeight==0 {
