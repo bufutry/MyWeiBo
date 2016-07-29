@@ -12,6 +12,9 @@ import UIKit
 
 class HomeTableViewController: BaseTableViewController {
 
+    var since_id:Int = 0
+    var max_id:Int  = 0
+    var isPull = true
     
     var list:[Statuses]?{
         didSet{
@@ -36,16 +39,48 @@ class HomeTableViewController: BaseTableViewController {
             tableView.separatorStyle = .None
             tableView.registerClass(NormalStatusCell.self, forCellReuseIdentifier: HomeTableViewCellIdentifier.normalr.rawValue)
              tableView.registerClass(RetweetedViewCell.self, forCellReuseIdentifier:  HomeTableViewCellIdentifier.retweeted.rawValue)
+            
+            refreshControl = RefreshControl()
+            
+            refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
+            list = [Statuses]()
             loadData()
         }
         
     }
     
-    private func loadData(){
+   
+    @objc private func loadData(){
     
-      Statuses.loadSatuses { (netdata, error) in
+        refreshControl?.endRefreshing()
+        if isPull {
+            since_id = list?.first?.id ?? 0
+            max_id = 0
+        }
+        else
+        {
+            since_id = 0
+            max_id = ((list?.last?.id)! - 1) ?? 0
+        }
+        since_id = 0
+        Statuses.loadSatuses(since_id, max_id: max_id) {(netdata, error) in
         if error==nil{
-          self.list = netdata
+            
+            if netdata == nil || netdata?.count==0
+            {
+               self.isPull = true
+               return
+            }
+             self.list = netdata
+//            if self.isPull
+//            {
+//             self.list =  netdata! + self.list!
+//            }
+//            else
+//            {
+//             self.list = self.list! + netdata!
+//            }
+            self.isPull = true
         }
       }
     }
@@ -117,6 +152,9 @@ extension HomeTableViewController
         let mode = list![indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier( HomeTableViewCellIdentifier.cellIdentifier(mode), forIndexPath: indexPath) as! HomeTableViewCell
         cell.statuses = mode
+        if indexPath.row == (list?.count)!-1 {
+            isPull = false
+        }
         return cell
         
     }

@@ -42,7 +42,7 @@ class Statuses: NSObject{
         }
     }
         /// id
-    var id:NSNumber?
+    var id:Int = 0
         /// 正文
     var text:String?
         /// 用户信息
@@ -107,14 +107,21 @@ class Statuses: NSObject{
           super.setValue(value, forKey: key)
     }
     
-    class  func loadSatuses(data:(netdata:[Statuses]?,error:NSError?)->())  {
+    class  func loadSatuses(since_id:Int,max_id:Int,data:(netdata:[Statuses]?,error:NSError?)->())  {
         let aipName = "/2/statuses/home_timeline.json"
-        let parms = ["access_token":currentAcount!.access_token!]
+        var parms = ["access_token":currentAcount!.access_token!]
+        if since_id>0 {
+            parms["since_id"] = "\(since_id)"
+        }
+        
+        if max_id>0 {
+            parms["max_id"] = "\(max_id)"
+        }
         
         NetWokingToos.sharedManger().startGET(aipName, pamre: parms, success: { (json) in
             let lists = json!["statuses"] as! [[String:AnyObject]]
             let satuseArray = transfromMode(lists)
-            downImage(satuseArray, data: data)
+                downImage(satuseArray, data: data)
             }) { (_, error) in
                 data(netdata: nil,error: error)
         }
@@ -122,25 +129,34 @@ class Statuses: NSObject{
     
     private class func downImage(list:[Statuses]?,data:(netdata:[Statuses]?,error:NSError?)->()){
        
-         let  group = dispatch_group_create()
+        if list!.count == 0 || list == nil
+        {
+          //  data(netdata: list, error: nil)
+            return
+        }
+        let  group = dispatch_group_create()
         for status in list! {
-            guard (status.picList != nil) else{
+            guard (status.picList == nil) else{
               continue
             }
-            
-            
             for url in status.picList! {
-                dispatch_group_enter(group)
-                SDWebImageManager.sharedManager().downloadWithURL(url, options: .RetryFailed, progress:nil, completed: { (_, _, _, _) in
+                 dispatch_group_enter(group)
+                SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, _, _, _, _) -> Void in
                     print("ok")
                     dispatch_group_leave(group)
                 })
             }
         }
         
-        dispatch_group_notify(group, dispatch_get_main_queue()) { 
+        dispatch_group_notify(group, dispatch_get_main_queue()) { () -> Void in
+           
             data(netdata: list,error: nil)
         }
+
+//        dispatch_group_notify(group, dispatch_get_main_queue()) {
+//           () -> Void in
+//            data(netdata: list,error: nil)
+//        }
     }
 
     

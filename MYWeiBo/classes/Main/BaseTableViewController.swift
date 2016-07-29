@@ -18,6 +18,7 @@ class BaseTableViewController: UITableViewController,VisitorViewDelegat{
         navigationItem
 
         isLogin ? super.viewDidLoad() : setupVisitorView()
+        view.backgroundColor = UIColor.init(white: 0.6, alpha: 0.6)
 
     }
 
