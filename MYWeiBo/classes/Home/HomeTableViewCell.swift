@@ -57,9 +57,6 @@ class HomeTableViewCell: UITableViewCell {
         
         topView.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: contentView, size: CGSizeMake(with, 60), offset: CGPointMake(0, 0))
         contextView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: topView, size: nil, offset: CGPointMake(10, 10))
-//        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: contextView, size: CGSizeZero,offset: CGPointMake(0, 10))
-//        pictureHeiCons = pictureView.xmg_Constraint(cons, attribute: .Height)
-//        pictureWitdCons = pictureView.xmg_Constraint(cons, attribute: .Width)
         footView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: pictureView, size: CGSizeMake(with, 30), offset: CGPointMake(-10, 10))
 
     }

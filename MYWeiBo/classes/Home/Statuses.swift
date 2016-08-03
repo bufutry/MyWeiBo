@@ -60,6 +60,9 @@ class Statuses: NSObject{
         }
     
     }
+    
+
+    
     var storePic:[NSURL]?
     
         /// 转发
@@ -131,18 +134,17 @@ class Statuses: NSObject{
        
         if list!.count == 0 || list == nil
         {
-          //  data(netdata: list, error: nil)
+            data(netdata: list, error: nil)
             return
         }
         let  group = dispatch_group_create()
         for status in list! {
-            guard (status.picList == nil) else{
+            guard status.picList != nil else{
               continue
             }
             for url in status.picList! {
                  dispatch_group_enter(group)
                 SDWebImageManager.sharedManager().downloadImageWithURL(url, options: SDWebImageOptions(rawValue: 0), progress: nil, completed: { (_, _, _, _, _) -> Void in
-                    print("ok")
                     dispatch_group_leave(group)
                 })
             }
@@ -152,11 +154,6 @@ class Statuses: NSObject{
            
             data(netdata: list,error: nil)
         }
-
-//        dispatch_group_notify(group, dispatch_get_main_queue()) {
-//           () -> Void in
-//            data(netdata: list,error: nil)
-//        }
     }
 
     

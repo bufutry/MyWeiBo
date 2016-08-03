@@ -32,7 +32,7 @@ class RetweetedViewCell: HomeTableViewCell {
         
          retweetText.xmg_AlignInner(type: XMG_AlignType.TopLeft, referView: bgBtn, size: nil ,offset: CGPointMake(10, 10))
        
-        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: retweetText, size:CGSizeMake(10, 10),offset: CGPointMake(0, 10))
+        let cons = pictureView.xmg_AlignVertical(type: XMG_AlignType.BottomLeft, referView: retweetText, size:CGSize(width: 290, height: 290),offset: CGPointMake(0, 10))
     
         pictureHeiCons = pictureView.xmg_Constraint(cons, attribute: .Height)
         pictureWitdCons = pictureView.xmg_Constraint(cons, attribute: .Width)

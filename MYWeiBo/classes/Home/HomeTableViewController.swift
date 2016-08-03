@@ -34,25 +34,37 @@ class HomeTableViewController: BaseTableViewController {
             
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(changePresent), name: PresentationControlleWillHidden, object: nil)
             NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(changePresent), name: PresentationControlleWillShow, object: nil)
+            
+            NSNotificationCenter.defaultCenter().addObserver(self, selector: "picture:", name: StatusePictureViewDidSelect, object: nil)
+            
           //  modalTransitionStyle =
             tableView.rowHeight = UITableViewAutomaticDimension
             tableView.separatorStyle = .None
             tableView.registerClass(NormalStatusCell.self, forCellReuseIdentifier: HomeTableViewCellIdentifier.normalr.rawValue)
              tableView.registerClass(RetweetedViewCell.self, forCellReuseIdentifier:  HomeTableViewCellIdentifier.retweeted.rawValue)
             
+
             refreshControl = RefreshControl()
             
             refreshControl?.addTarget(self, action: #selector(loadData), forControlEvents: .ValueChanged)
+            tableView.addSubview(mindeView)
             list = [Statuses]()
             loadData()
         }
         
     }
     
-   
-    @objc private func loadData(){
+    func picture(not:NSNotification) {
+       let indx = not.object![StatusePictureViewIndex] as! Int
+        let imageArray = not.object![StatusePictureViewImageUrl] as! [NSURL]
+        print(#function)
+        print(imageArray[indx])
+        let vc = PictureBowrsViewController.init(index: indx, urls: imageArray)
+        
+        presentViewController(vc, animated: true, completion: nil)
+    }
     
-        refreshControl?.endRefreshing()
+    @objc private func loadData(){
         if isPull {
             since_id = list?.first?.id ?? 0
             max_id = 0
@@ -62,9 +74,21 @@ class HomeTableViewController: BaseTableViewController {
             since_id = 0
             max_id = ((list?.last?.id)! - 1) ?? 0
         }
-        since_id = 0
         Statuses.loadSatuses(since_id, max_id: max_id) {(netdata, error) in
+             self.refreshControl?.endRefreshing()
         if error==nil{
+            
+            if self.isPull == true
+            {
+                 self.mindeViewAnimation()
+                 if netdata?.count==0
+                 {
+                    self.mindeView.text = "暂无更新"
+                 }else
+                 {
+                   self.mindeView.text = "更新了"+"\(netdata!.count)"+"条微博"
+                 }
+            }
             
             if netdata == nil || netdata?.count==0
             {
@@ -72,14 +96,14 @@ class HomeTableViewController: BaseTableViewController {
                return
             }
              self.list = netdata
-//            if self.isPull
-//            {
-//             self.list =  netdata! + self.list!
-//            }
-//            else
-//            {
-//             self.list = self.list! + netdata!
-//            }
+            if self.isPull
+            {
+             self.list =  netdata! + self.list!
+            }
+            else
+            {
+             self.list = self.list! + netdata!
+            }
             self.isPull = true
         }
       }
@@ -95,9 +119,29 @@ class HomeTableViewController: BaseTableViewController {
         titleBtn.selected = !titleBtn.selected
     }
     
+    private func mindeViewAnimation(){
+        UIView.animateWithDuration(1, animations: { 
+            self.mindeView.y = self.mindeView.height + 20
+            }) { (_) in
+            UIView.animateWithDuration(0.3, animations: { 
+                self.mindeView.y = -self.mindeView.height*2
+            })
+        }
+    }
+    
     private lazy var popAnima:PopcoverAnimation = {
        let popAnima = PopcoverAnimation()
         return popAnima
+    }()
+    
+    private lazy var mindeView:UILabel = {
+       let lab = UILabel()
+        lab.backgroundColor = UIColor.orangeColor()
+        lab.textColor = UIColor.whiteColor()
+        lab.textAlignment = .Center
+        lab.font = UIFont.systemFontOfSize(14)
+        lab.frame = CGRectMake(0, -80, UIScreen.mainScreen().bounds.width, 44)
+        return lab
     }()
 
     private func setupNav()
@@ -154,6 +198,7 @@ extension HomeTableViewController
         cell.statuses = mode
         if indexPath.row == (list?.count)!-1 {
             isPull = false
+            loadData()
         }
         return cell
         
@@ -162,7 +207,7 @@ extension HomeTableViewController
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let mode = list![indexPath.row]
         let cell = tableView.dequeueReusableCellWithIdentifier(HomeTableViewCellIdentifier.cellIdentifier(mode)) as! HomeTableViewCell
-        var height:CGFloat = 300
+        var height:CGFloat = 0
         
         if mode.cellHeight==0 {
             height = cell.cellHight(mode)

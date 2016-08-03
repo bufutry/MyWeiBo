@@ -37,6 +37,8 @@ class NetWokingToos: NSObject {
         
          if let date = JSON
          {
+            print(api)
+            print(pamre)
             success!(date)
          }
         

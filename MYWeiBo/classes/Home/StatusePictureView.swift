@@ -10,14 +10,20 @@ import UIKit
 import SDWebImage
 
 let  PictureReuseIdentifier = "PictureReuseIdentifier"
+let  StatusePictureViewDidSelect = "StatusePictureViewDidSelect"
+let  StatusePictureViewIndex = "StatusePictureViewIndex"
+let  StatusePictureViewImageUrl = "StatusePictureViewImageUrl"
 
 
 class StatusePictureView: UICollectionView {
     
+    var index:Int = 0
+    var lagerIamegArray:[NSURL]?
+    
+    
     var imageArray:[NSURL]? {
         didSet{
-          calculationSize()
-            print(imageArray)
+         // calculationSize()
           reloadData()
         }
     }
@@ -29,6 +35,7 @@ class StatusePictureView: UICollectionView {
      super.init(frame: CGRectZero, collectionViewLayout: layout)
         setupUI()
      dataSource = self
+     delegate = self
     }
     
     private func setupUI(){
@@ -38,7 +45,6 @@ class StatusePictureView: UICollectionView {
     
     
     func calculationSize() -> CGSize {
-        
         
         
         let with:CGFloat = 90
@@ -71,7 +77,7 @@ class StatusePictureView: UICollectionView {
     
 }
 
-extension StatusePictureView:UICollectionViewDataSource
+extension StatusePictureView:UICollectionViewDataSource,UICollectionViewDelegate
 {
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return imageArray?.count ?? 0
@@ -86,6 +92,12 @@ extension StatusePictureView:UICollectionViewDataSource
         let url = imageArray![indexPath.row]
         cell.bgImageView.sd_setImageWithURL(url)
         return cell
+    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        let info:[String:AnyObject] = [StatusePictureViewIndex:indexPath.item,StatusePictureViewImageUrl:imageArray!]
+        
+        NSNotificationCenter.defaultCenter().postNotificationName(StatusePictureViewDidSelect, object: info)
+        
     }
 }
 
